@@ -3,14 +3,7 @@ import time
 import sys
 import csv
 import random
-from  parameter_list import *
-# clock = pygame.time.Clock
-# def waitFor(waitTime):
-#     waitCount = 0
-#     while waitCount < waitTime:
-#         dt = clock.tick(60) # 60 is your FPS here
-#         waitCount += dt
-#         pygame.event.pump() # Tells pygame to handle it's event, instead of pygame.event.get()
+__import__(parameter_list)
 
 
 def draw_stim(trialType):
@@ -18,57 +11,56 @@ def draw_stim(trialType):
     Function to draw the stimulus
     green circle for trialType == 1
     red circle for trialType == 0
-    The subject response is recorded by getting pygame.event.
-    The function counts down 3 seconds for the subject to respond from the
+    The subject response is recorded by getting pygame.event which keeps track of button presses
+    The function counts down 2 seconds for the subject to respond from the
     beginning of the stimulus presentation. If there is no response,
     the function returns to the main loop. If the subject responds, the Function
     returns the response and the time from stimulus presentation to time at
     button press
 
     parameters: trialType
-    returns: response and response time
+    returns: response and response_time
     """
-    res = 0
-    RT = 0
-    countdown = 3
-    # set pygame timer to countdown
+    response = 0 # should be assigned 1 if K_SPACE is pressed
+    RT = 0 # should be assigned value based on elapsed time from when stimulus is shown
+    countdown = 2
     if trialType == 0:
         SCREEN.fill(BG_COLOR)
         pygame.draw.circle(SCREEN,NOGO_COLOR, [Cx, Cy], int(round(RADIUS)), 0)
+        # flip the screen to display the drawn stimulus
         pygame.display.flip()
-        #the stimulus is shown for 0.1s
-        time.sleep(0.15)
-        #start time from stimulus presentation
-        start = time.time()
-        SCREEN.fill(BG_COLOR)
-        pygame.display.flip()
+        start = time.time() #start timer when the stimulus is shown
+
 
     else:
         SCREEN.fill(BG_COLOR)
         pygame.draw.circle(SCREEN,GO_COLOR, [Cx, Cy], int(round(RADIUS)), 0)
+        # flip the screen to display the drawn stimulus
         pygame.display.flip()
-        time.sleep(0.15)
-        start = time.time()
-        SCREEN.fill(BG_COLOR)
-        pygame.display.flip()
+        start = time.time() #start timer when the stimulus is shown
 
-    #start countdown to end of 3s or until a button is pressed
+    #start countdown to end of 2s or until a button is pressed
+    # pygame.USEREVENT is a custom event handler.
+    #In the code below it updates itself every 1000ms
     pygame.time.set_timer(pygame.USEREVENT,1000)
     while not countdown <= 0 or res != 1:
         for event in pygame.event.get():
+            # if the pygame exit button is pressed
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+            # 1000ms have passed and USEREVENT has occurred
             if event.type == pygame.USEREVENT:
-                countdown -= 1
+                countdown -= 1 # reduce the countdown
+            # Subject has pressed a button
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     RT = float(time.time() - start)
-                    res = 1
+                    response = 1
+
         #clear the event buffer so multiple button presses are ignored
         pygame.event.clear()
-
-        return (RT, res)
+        return (RT, response)
 
 
 def message_display(text):
