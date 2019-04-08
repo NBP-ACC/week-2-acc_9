@@ -70,7 +70,7 @@ def draw_stim(trialType):
 
         return (RT, res)
 
-
+# 2. Message to be displayed to user and Key handeling
 def message_display(text):
     """
     Function to display a given message in the middle of the SCREEN
@@ -104,7 +104,7 @@ def message_display(text):
 
 
 
-#draw fixation cross
+# 3. Draw fixation cross
 def draw_fixation():
     """
     Function to draw fixation cross based on the parameters listed in
@@ -116,6 +116,7 @@ def draw_fixation():
     pygame.display.flip()
     return 1
 
+# 4. Save RT and response Data as csv to create Dataframe
 def writeData(datalist, subID):
     """
     Function to write the list of responses to a csv dataFile
@@ -129,7 +130,7 @@ def writeData(datalist, subID):
         for l in datalist:
             fd.writerow(l)
 
-######                 main experiment loop            ##########
+######                 Main Experiment Loop            ##########
 def experiment(subID):
     #List where all the repsonses are stores
     dataFile = []
@@ -165,6 +166,7 @@ def experiment(subID):
 
     return dataFile
 
+# Give information about the subject and start experiment
 if __name__ == "__main__":
     #Fill this before start of the experiment
     subID = # ID of the subject
