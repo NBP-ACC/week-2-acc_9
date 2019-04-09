@@ -5,12 +5,12 @@
 This code implements a simple go/no-go task using pygame. However, there are some gaps that you have to fill in order to make the experiment run (lines ??? - wait for updated code). After you got the experiment to run, we want you to collect some data from your fellow students or friends. The analysis we will do in the next two weeks will be based on this data. Each of your group members should try to find 2 friends to make the experiment.
 
 The points will be distributed as follows:
-- Function to save Data as csv-file: 4 pts
-- Set parameters: 2 pts
-- Code for 'RT'(reaction time) and 'res' (response): 2 pts
-- Create Datapath: 2 pts
+- Function to save Data as csv-file: **4 pts**
+- Set parameters: **2 pts**
+- Code for 'RT'(reaction time) and 'res' (response): **2 pts**
+- Create Datapath: **2 pts**
 
-Additionally, you can get 2 points for good coding style. 
+Additionally, you can get **2 points** for good coding style. 
 
 ### Go/no-go Task
 
