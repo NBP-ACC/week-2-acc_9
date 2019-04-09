@@ -7,10 +7,10 @@ This code implements a simple go/no-go task using pygame. However, there are som
 The points for this assignment will be distributed as follows:
 - Function to save Data as csv-file: **4 pts** (main experiment: line 76)
 - Code for 'RT'(reaction time) and 'response': **2 pts** (main experiment: line 125 and 126)
-- Remember to change the subject ID for each participant!: (main experiment: line 139)
 - Set parameters: **2 pts** (parameter list: line 53 and 57)
 - Number of total trials should be 100. Number of No-go trials should be 20.
 - Create Datapath: **2 pts** (parameter list: line 73)
+- When collecting datas, remember to change the subject ID for each participant!: (main experiment: line 139)
 
 Additionally, you can get **2 points** for good coding style.
 
