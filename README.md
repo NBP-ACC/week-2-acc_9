@@ -11,13 +11,10 @@ The points will be distributed as follows:
 - Create Datapath: 2 pts
 
 
-In the following you will find an exact description of how the experiment should look like, once you successfully completed the code.
-
-
 ### Go/no-go Task
 
-In a go/no-go task the participant is required to react given a “go” stimulus and refrain from reacting given a “no-go” signal. In psychology this experiment paradigm is often used to measure impulsiveness and sustained attention.
+In a go/no-go task the participant is required to react to a “go” stimulus and refrain from reacting given a “no-go” signal. Measuring the response an the reation time, in psychology this experiment paradigm is often used to evaluate impulsiveness and sustained attention.
 
-The overall structure of this experiment:
+In the following you will find a visualization of how the experiment should look like, once you successfully completed the code: 
 
 <img src="go-nogo.png" alt="drawing" width="400"/>
