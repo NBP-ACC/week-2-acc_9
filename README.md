@@ -10,6 +10,7 @@ The points will be distributed as follows:
 - Code for 'RT'(reaction time) and 'res' (response): 2 pts
 - Create Datapath: 2 pts
 
+Additionally, you can get 2 points for good coding style. 
 
 ### Go/no-go Task
 
