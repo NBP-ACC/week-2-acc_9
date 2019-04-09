@@ -2,7 +2,7 @@
 
 ### Overview
 
-This code implements a simple go/no-go task using pygame. However, there are some gaps that you have to fill (lines ??? - wait for updated code). After this is done run the experiment and collect some data from your fellow students and/or friends.
+This code implements a simple go/no-go task using pygame. However, there are some gaps that you have to fill in order to make the experiment run (lines ??? - wait for updated code). After you got the experiment to run, collect some data from your fellow students and/or friends. The analysis we will do in the next two weeks will be based on this data.
 
 
 ### Go/no-go Task
