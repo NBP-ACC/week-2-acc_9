@@ -50,11 +50,15 @@ BG_COLOR = (123,123,123)
 FONTSIZE = 60
 # Set number of trials in the experiment
 # How should you name the variable?
-# TODO
+### TODO
+NUMTRIAL = 100 # in accordance with main_experiment; 100 trials
+### TODOEND
 
 # Set number of nogo trials in the experiment
 # How should you name the variable?
-# TODO
+### TODO
+PCT_NOGO = 20/100 # in accordance with main_experiment; 20% nogo
+### ENDTODO
 
 # Set the time interval in seconds of the delay
 # from end of trial n and beginning of trial n+1
@@ -70,4 +74,8 @@ FPS = 60
 # Create a directory called 'Data' in your working-directory
 # where the experiment data for each subject is saved
 # before creating it check if the directory 'Data' already exists
-# TODO
+### TODO
+DATAPATH = "./Data/"
+if not os.path.exists(DATAPATH):
+    os.mkdir(DATAPATH)
+### TODOEND

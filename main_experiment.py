@@ -70,20 +70,23 @@ def writeData(datalist, subID):
     """
     Function to write the list of responses to a csv dataFile
     """
-    #TODO
+    
+    ### TODO
     # create a csvfile for each subject and name it: Sub[subID].csv
+    # Since datalist is created only for one subject no need to check for different subIDs
+    save_path = DATAPATH + "Sub{}.csv".format(subID)
+    with open (save_path, "w") as csvfile:
 
-    with open (("Sub%d.csv",(subID)), "w", newline=" ") as csvfile:
-
-    # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
+        # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
         writer = csv.writer(csvfile)
         writer.writerow(["SubjectID", "StimulusType", "response", "RT"])
 
-    # and write each entry of datalist to a single row
-            for index, i in enumerate(datalist):
-            writer.writerow(datalist[index], delimiter=",")
+        # and write each entry of datalist to a single row
+        for elem in datalist:
+            writer.writerow(elem)
+    ### ENDTODO
 
-
+    
 ######                 main experiment loop            ##########
 def experiment(subID):
     #List where all the repsonses are stored
@@ -130,9 +133,10 @@ def experiment(subID):
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_SPACE:
                                 # Time elapsed from stimulus to button press
-                                #TODO
-                                RT = pygame.time.get_ticks - start
+                                ### TODO
+                                RT = pygame.time.get_ticks() - start
                                 response = 1
+                                ### TODOEND
 
                 fill_background()# clear the screen
                 pygame.display.flip()
@@ -145,7 +149,7 @@ def experiment(subID):
 
 if __name__ == "__main__":
     #Fill this before start of the experiment
-    subID = # TODO ID of the subject
+    subID = 1 # TODO ID of the subject
     dataFile = experiment(subID)
     print('*'*30)
     print('Writing in data file: Sub{}.csv'.format(subID))
