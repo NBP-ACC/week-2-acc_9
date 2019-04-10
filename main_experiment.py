@@ -70,10 +70,18 @@ def writeData(datalist, subID):
     """
     Function to write the list of responses to a csv dataFile
     """
+    #TODO
     # create a csvfile for each subject and name it: Sub[subID].csv
+    
+    with open (("Sub%d.csv",(subID)), "w", newline=" ") as csvfile:
+        
     # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
+        writer = csv.writer(csvfile)
+        writer.writerow(["SubjectID", "StimulusType", "response", "RT"])
+        
     # and write each entry of datalist to a single row
-    # TODO
+            for index, i in enumerate(datalist):
+            writer.writerow(datalist[index], delimiter=",")
 
 
 ######                 main experiment loop            ##########
