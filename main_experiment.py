@@ -72,13 +72,13 @@ def writeData(datalist, subID):
     """
     #TODO
     # create a csvfile for each subject and name it: Sub[subID].csv
-    
+
     with open (("Sub%d.csv",(subID)), "w", newline=" ") as csvfile:
-        
+
     # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
         writer = csv.writer(csvfile)
         writer.writerow(["SubjectID", "StimulusType", "response", "RT"])
-        
+
     # and write each entry of datalist to a single row
             for index, i in enumerate(datalist):
             writer.writerow(datalist[index], delimiter=",")
@@ -130,7 +130,7 @@ def experiment(subID):
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_SPACE:
                                 # Time elapsed from stimulus to button press
-                                RT = # TODO
+                                RT = pygame.time.get_ticks
                                 response = # TODO
 
                 fill_background()# clear the screen
