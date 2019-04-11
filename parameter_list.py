@@ -13,7 +13,7 @@ pygame.init()
 #set screen size based on size of monitor
 # SCREEN = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
 # SCREEN = pygame.display.set_mode(SCREENSIZE)
- SCREEN = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+SCREEN = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 
 
 #Get width and height of the screen at fullscreen mode
