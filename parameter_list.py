@@ -7,17 +7,18 @@ from math import atan2,degrees
 #Initialise pygame
 pygame.init()
 #small screen size
-SCREENSIZE = (800,600)
+SCREENSIZE = (1000,1300)
 #Get current resolution of screen
 infoObject = pygame.display.Info()
 #set screen size based on size of monitor
-# SCREEN = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
-# SCREEN = pygame.display.set_mode(SCREENSIZE)
+#SCREEN = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
+#SCREEN = pygame.display.set_mode(SCREENSIZE)
 SCREEN = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 
 
 #Get width and height of the screen at fullscreen mode
 WIDTH, HEIGHT = SCREEN.get_size()
+
 
 # distance of subject from SCREEN
 distance = 30
@@ -47,7 +48,7 @@ GO_COLOR = (0, 255, 0)
 BG_COLOR = (123,123,123)
 
 #Set fontsize of the text
-FONTSIZE = 60
+FONTSIZE = 40
 # Set number of trials in the experiment
 # How should you name the variable?
 ### TODO
