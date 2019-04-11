@@ -9,10 +9,10 @@ pygame.init()
 #small screen size
 SCREENSIZE = (800,600)
 #Get current resolution of screen
-infoObject = pygame.display.Info()
+# infoObject = pygame.display.Info()
 #set screen size based on size of monitor
-SCREEN = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
-# SCREEN = pygame.display.set_mode(SCREENSIZE)
+# SCREEN = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
+SCREEN = pygame.display.set_mode(SCREENSIZE)
 # SCREEN = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 
 
