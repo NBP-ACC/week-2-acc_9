@@ -137,6 +137,12 @@ def experiment(subID):
                                 RT = pygame.time.get_ticks() - start
                                 response = 1
                                 ### TODOEND
+                            ### CUSTOM ADDITION: ENABLE CLOSING VIA ESC
+                            if event.key == pygame.K_ESCAPE:
+                                pygame.quit()
+                                sys.exit()
+                            ###
+                            
 
                 fill_background()# clear the screen
                 pygame.display.flip()
@@ -149,7 +155,14 @@ def experiment(subID):
 
 if __name__ == "__main__":
     #Fill this before start of the experiment
-    subID = 1 # TODO ID of the subject
+    ### TODO ID of the subject
+    subID = 0 # default
+    try:
+        print("Using SubjectID", sys.argv[1])
+        subID = sys.argv[1]
+    except: # no loop, so no need to prevent ctrl-c catching
+        pass
+    ### ENDTODO
     dataFile = experiment(subID)
     print('*'*30)
     print('Writing in data file: Sub{}.csv'.format(subID))
