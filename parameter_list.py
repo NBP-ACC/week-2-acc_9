@@ -7,7 +7,7 @@ from math import atan2,degrees
 #Initialise pygame
 pygame.init()
 #small screen size
-SCREENSIZE = (800,600)
+SCREENSIZE = (400,300)
 #Get current resolution of screen
 # infoObject = pygame.display.Info()
 #set screen size based on size of monitor
